@@ -1,0 +1,5 @@
+#!/bin/bash
+mkdir -p ~/.vim/ftdetect > /dev/null
+mkdir -p ~/.vim/ftplugin > /dev/null
+cp newtype ~/.vim/ftplugin
+cp removetype ~/.vim/ftplugin

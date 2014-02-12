@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -f ~/.vim/ftdetect/$1.vim ]; then
+   read -p "$1 already exists, do you want to overwrite(y/n)? " yesno
+   case "$yesno" in
+      y|Y) ;;
+      n|N) exit;;
+      *  ) echo "invalid choice."
+           ./$0
+           exit
+   esac
+fi
+echo -n "au BufRead,BufNewFile *.$1	set filetype=$2" > ~/.vim/ftdetect/$1.vim
+mkdir - p"~/.vim/ftplugin/$2" > /dev/null
+$EDITOR "~/.vim/ftplugin/$2/$1.vim"
+echo "$1 added!"

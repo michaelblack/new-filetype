@@ -1,0 +1,12 @@
+#!/bin/bash
+
+read -p "remove $1 from $2(yes/no)? " yesno
+case "$yesno" in
+   n|N) exit;;
+   y|Y) rm ~/.vim/ftdetect/$1.vim
+	rm ~/.vim/ftplugin/$2/$1.vim
+	echo "$1 removed!";;
+   *)   echo "invalid choice."
+	./$0
+	exit;;
+esac
