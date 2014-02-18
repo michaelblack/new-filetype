@@ -7,4 +7,4 @@ There are two scripts I made for adding new filetypes to vim, `newtype` and `rem
 
 `removetype file-extension filetype` undoes what newtype does. It will always ask for confirmation.
 
-To install run `./install`
+To install in your ~/.vim/ftplugin directory, run `./install`
